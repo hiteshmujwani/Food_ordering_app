@@ -5,13 +5,16 @@ import {
   View,
   TextInput,
   Image,
+  ScrollView,
 } from 'react-native';
+import { Checkbox } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 import FetherIcon from 'react-native-vector-icons/Feather';
 import FontAwesomIcon from 'react-native-vector-icons/FontAwesome';
 
 export default function LoginScreen({navigation}: any) {
   return (
+    <ScrollView contentContainerStyle={{flex:1,justifyContent:'center',height:100}}>
     <View style={styles.Container}>
       <Image
         source={require('../assets/Login_image.png')}
@@ -27,6 +30,9 @@ export default function LoginScreen({navigation}: any) {
           value="9602681408"
         />
       </View>
+      <View style={{display:'flex', flexDirection:'row',alignItems:'center'}}>
+        <Checkbox status="checked" color='#1BAC4B'/>
+        <Text style={{color:'#898989',fontSize:15,fontWeight:'600'}}>Remember Me</Text></View>
       <TouchableOpacity
         style={styles.Button}
         onPress={() => navigation.navigate('app')}>
@@ -46,7 +52,6 @@ export default function LoginScreen({navigation}: any) {
       <Text style={{color: '#898989', fontSize: 18, marginTop: 40}}>
         Or Continue With
       </Text>
-
       <View style={styles.OtherOptionsContainer}>
         <TouchableOpacity style={styles.OptionBox}>
           <Icon name="google" size={20} color={'#000000'} />
@@ -59,6 +64,7 @@ export default function LoginScreen({navigation}: any) {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
   },
   Container: {
     paddingHorizontal: 15,
-    flex: 1,
+    flex:1,
     justifyContent: 'center',
     alignItems: 'center',
     gap: 20,

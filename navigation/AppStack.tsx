@@ -14,7 +14,8 @@ function TabNavigation() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: {height: 60, margin: 10, borderRadius: 20},
+        tabBarStyle: {height: 60, margin: 10, borderRadius: 20,position:'absolute'},
+        
       }}>
       <Tab.Screen
         name="Home"
